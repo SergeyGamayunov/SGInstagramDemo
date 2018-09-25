@@ -9,7 +9,8 @@
 import Foundation
 
 protocol AuthViewModelProtocol {
-    var authManager: AuthManagerProtocol { get }
+    var firstStepRequest: URLRequest? { get }
+    func requestToken(with code: String)
 }
 
 class AuthViewModel {
@@ -20,5 +21,11 @@ class AuthViewModel {
 }
 
 extension AuthViewModel: AuthViewModelProtocol {
-    
+    var firstStepRequest: URLRequest? {
+        return authManager.firstStepRequest
+    }
+
+    func requestToken(with code: String) {
+        authManager.requestToken(with: code)
+    }
 }

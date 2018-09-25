@@ -10,6 +10,10 @@
 		8EADFA66B797711945700DED /* Pods_SGInstagramDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A5437D067EDF421F0EF608 /* Pods_SGInstagramDemo.framework */; };
 		A535F0CB21596E3F003CD238 /* MainGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535F0CA21596E3F003CD238 /* MainGalleryViewController.swift */; };
 		A535F0CD21596E4D003CD238 /* MainGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535F0CC21596E4D003CD238 /* MainGalleryViewModel.swift */; };
+		A5825F2E2159F72D006CEDE3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F2D2159F72D006CEDE3 /* Configuration.swift */; };
+		A5825F312159FB04006CEDE3 /* SGTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F302159FB04006CEDE3 /* SGTarget.swift */; };
+		A5825F33215A2212006CEDE3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F32215A2212006CEDE3 /* UIView+Layout.swift */; };
+		A5825F36215A2C86006CEDE3 /* URL+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F35215A2C86006CEDE3 /* URL+Parameters.swift */; };
 		A5D7385B2159588C009080F4 /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7385A2159588C009080F4 /* Containers.swift */; };
 		A5D7385D21595959009080F4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7385C21595958009080F4 /* AuthManager.swift */; };
 		A5D7385F21595AF3009080F4 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D7385E21595AF3009080F4 /* Router.swift */; };
@@ -27,6 +31,10 @@
 		86A5437D067EDF421F0EF608 /* Pods_SGInstagramDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGInstagramDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A535F0CA21596E3F003CD238 /* MainGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGalleryViewController.swift; sourceTree = "<group>"; };
 		A535F0CC21596E4D003CD238 /* MainGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGalleryViewModel.swift; sourceTree = "<group>"; };
+		A5825F2D2159F72D006CEDE3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A5825F302159FB04006CEDE3 /* SGTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTarget.swift; sourceTree = "<group>"; };
+		A5825F32215A2212006CEDE3 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		A5825F35215A2C86006CEDE3 /* URL+Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Parameters.swift"; sourceTree = "<group>"; };
 		A5D7385A2159588C009080F4 /* Containers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Containers.swift; sourceTree = "<group>"; };
 		A5D7385C21595958009080F4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		A5D7385E21595AF3009080F4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -69,11 +77,28 @@
 			path = MainGallery;
 			sourceTree = "<group>";
 		};
+		A5825F2F2159FAF3006CEDE3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A5825F302159FB04006CEDE3 /* SGTarget.swift */,
+				A5D7385C21595958009080F4 /* AuthManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A5825F34215A2C71006CEDE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5825F32215A2212006CEDE3 /* UIView+Layout.swift */,
+				A5825F35215A2C86006CEDE3 /* URL+Parameters.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A5D7385921595874009080F4 /* Business */ = {
 			isa = PBXGroup;
 			children = (
 				A5D7385A2159588C009080F4 /* Containers.swift */,
-				A5D7385C21595958009080F4 /* AuthManager.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -92,6 +117,7 @@
 			children = (
 				A535F0C921596887003CD238 /* MainGallery */,
 				A5D738642159646A009080F4 /* Auth */,
+				A5825F2D2159F72D006CEDE3 /* Configuration.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -126,9 +152,11 @@
 		A5F021A12158F35600B565B1 /* SGInstagramDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A5825F2F2159FAF3006CEDE3 /* Networking */,
 				A5D7386321596464009080F4 /* Modules */,
 				A5D7386021595E1E009080F4 /* Router */,
 				A5D7385921595874009080F4 /* Business */,
+				A5825F34215A2C71006CEDE3 /* Extensions */,
 				A5F021A22158F35600B565B1 /* AppDelegate.swift */,
 				A5F021A92158F35800B565B1 /* Assets.xcassets */,
 				A5F021AB2158F35800B565B1 /* LaunchScreen.storyboard */,
@@ -273,8 +301,12 @@
 				A5D73868215964B7009080F4 /* AuthViewModel.swift in Sources */,
 				A535F0CD21596E4D003CD238 /* MainGalleryViewModel.swift in Sources */,
 				A5D7385B2159588C009080F4 /* Containers.swift in Sources */,
+				A5825F312159FB04006CEDE3 /* SGTarget.swift in Sources */,
+				A5825F2E2159F72D006CEDE3 /* Configuration.swift in Sources */,
+				A5825F33215A2212006CEDE3 /* UIView+Layout.swift in Sources */,
 				A5D738662159647A009080F4 /* AuthViewController.swift in Sources */,
 				A535F0CB21596E3F003CD238 /* MainGalleryViewController.swift in Sources */,
+				A5825F36215A2C86006CEDE3 /* URL+Parameters.swift in Sources */,
 				A5D7386221595E33009080F4 /* RouterDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

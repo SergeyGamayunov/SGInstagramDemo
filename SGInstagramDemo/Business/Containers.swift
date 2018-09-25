@@ -8,6 +8,7 @@
 
 import Dip
 import Foundation
+import Moya
 
 enum Containers {
     case viewControllers
@@ -34,8 +35,24 @@ enum Containers {
             ) as FirstLaunchManagerProtocol
         }
 
+        container.register {
+            SGProvider(endpointClosure: { (target: SGTarget) -> Endpoint in
+                let endpoint = SGProvider.defaultEndpointMapping(for: target)
+
+                if let authManager = try? container.resolve() as AuthManagerProtocol,
+                    let token = authManager.authToken {
+                    if case var .requestParameters(parameters, _) = target.task {
+                        parameters[SGTarget.ParamaterKey.accessToken] = token
+                    }
+                    
+                    return endpoint.adding(newHTTPHeaderFields: ["Token-Auth": token])
+                }
+                return endpoint
+            }) as SGProvider
+        }
+
         container.register(.singleton) {
-            AuthManager() as AuthManagerProtocol
+            try AuthManager(provider: container.resolve()) as AuthManagerProtocol
         }
 
         return container
