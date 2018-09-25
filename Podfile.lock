@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (4.7.3)
+  - Dip (7.0.0)
+  - KeychainAccess (3.1.1)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.4)
+  - RxSwift (4.3.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Dip
+  - KeychainAccess
+  - Moya
+  - RxSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Dip
+    - KeychainAccess
+    - Moya
+    - Result
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Dip: 996ce76ec9170ca3c260683d2815596dd2bf99c6
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+
+PODFILE CHECKSUM: f7ed9c5a2baadedb324a0c61b70261ae1044cd4f
+
+COCOAPODS: 1.5.3
