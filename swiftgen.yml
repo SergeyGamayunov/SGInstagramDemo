@@ -1,0 +1,6 @@
+input_dir: SGInstagramDemo/Resources/
+output_dir: SGInstagramDemo/Constants/
+strings:
+  paths: en.lproj/Localizable.strings
+  templateName: structured-swift4
+  output: Strings.swift

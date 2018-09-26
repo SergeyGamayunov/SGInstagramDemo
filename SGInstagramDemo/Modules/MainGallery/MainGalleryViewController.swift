@@ -10,6 +10,7 @@ import UIKit
 
 class MainGalleryViewController: UIViewController {
     let viewModel: MainGalleryViewModelProtocol
+    var posts = [SimplePost]()
 
     init(viewModel: MainGalleryViewModelProtocol) {
         self.viewModel = viewModel
@@ -21,9 +22,32 @@ class MainGalleryViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .red
+        let button = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logout))
+
+        navigationItem.leftBarButtonItem = button
+
+        loadData()
+    }
+
+    func loadData() {
+        viewModel.getMyRecentMedia { result in
+            switch result {
+            case .success(let userData):
+                self.posts = SimplePost.initArrayFrom(userData)
+            case .failure(let error):
+                self.presentError(error)
+            }
+        }
+    }
+
+    @objc
+    func logout() {
+        viewModel.logout()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+extension MainGalleryViewController: ErrorPresentable { }

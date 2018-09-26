@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  SGInstagramDemo
+
+  Created by Sergey Gamayunov on 26/09/2018.
+  Copyright © 2018 Sergey. All rights reserved.
+*/
+
+"ok" = "OK";
+"error_occured" = "Error occured!";

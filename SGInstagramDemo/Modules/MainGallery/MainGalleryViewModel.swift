@@ -8,8 +8,26 @@
 
 import Foundation
 
-protocol MainGalleryViewModelProtocol { }
+protocol MainGalleryViewModelProtocol {
+    func logout()
+    func getMyRecentMedia(completion: @escaping MyRecentMediaCompletion)
+}
 
-class MainGalleryViewModel { }
+class MainGalleryViewModel {
+    let authManager: AuthManagerProtocol
+    let mediaService: MediaServiceProtocol
+    init(authManager: AuthManagerProtocol, mediaService: MediaServiceProtocol) {
+        self.authManager = authManager
+        self.mediaService = mediaService
+    }
+}
 
-extension MainGalleryViewModel: MainGalleryViewModelProtocol { }
+extension MainGalleryViewModel: MainGalleryViewModelProtocol {
+    func logout() {
+        authManager.logout()
+    }
+
+    func getMyRecentMedia(completion: @escaping MyRecentMediaCompletion) {
+        mediaService.getMyRecentMedia(completion: completion)
+    }
+}

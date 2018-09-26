@@ -14,6 +14,7 @@ typealias SGProvider = MoyaProvider<SGTarget>
 enum SGTarget {
     case auth
     case requestToken(code: String)
+    case myRecent
 }
 
 extension SGTarget: TargetType {
@@ -27,12 +28,14 @@ extension SGTarget: TargetType {
             return "oauth/authorize/"
         case .requestToken:
             return "oauth/access_token/"
+        case .myRecent:
+            return "v1/users/self/media/recent/"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .auth:
+        case .auth, .myRecent:
             return .get
         case .requestToken:
             return .post
@@ -62,6 +65,9 @@ extension SGTarget: TargetType {
             parameters.appendParam("authorization_code", name: ParamaterKey.grantType)
 
             return .uploadMultipart(parameters)
+
+        case .myRecent:
+            return .requestParameters(parameters: [:], encoding: URLEncoding())
         }
     }
 

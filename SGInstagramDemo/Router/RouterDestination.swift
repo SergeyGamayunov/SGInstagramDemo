@@ -13,9 +13,22 @@ enum RouterDestination: String, DependencyTagConvertible {
     case auth
     case mainGallery
 
+    var isWrappedIntoNavigationController: Bool {
+        switch self {
+        case .auth:
+            return false
+        case .mainGallery:
+            return true
+        }
+    }
+
     func controller(in container: DependencyContainer) -> UIViewController {
         do {
-            return try container.resolve(tag: self)
+            let controller = try container.resolve(tag: self) as UIViewController
+            if isWrappedIntoNavigationController {
+                return UINavigationController(rootViewController: controller)
+            }
+            return controller
         } catch {
             fatalError("Error resolving DI Container controller")
         }

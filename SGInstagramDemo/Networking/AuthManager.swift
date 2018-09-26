@@ -16,6 +16,7 @@ protocol AuthManagerProtocol {
     var isAuthorized: Bool { get }
     var isAuthorizedObservable: Observable<Bool> { get }
     func save(token: String)
+    func logout()
 
 
     var firstStepRequest: URLRequest? { get }
@@ -52,6 +53,11 @@ extension AuthManager: AuthManagerProtocol {
 
     func save(token: String) {
         keychain[tokenKey] = token
+    }
+
+    func logout() {
+        keychain[tokenKey] = nil
+        isAuthorizedSubject.onNext(false)
     }
 
     func requestToken(with code: String) {

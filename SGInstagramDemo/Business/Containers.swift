@@ -41,18 +41,22 @@ enum Containers {
 
                 if let authManager = try? container.resolve() as AuthManagerProtocol,
                     let token = authManager.authToken {
-                    if case var .requestParameters(parameters, _) = target.task {
+                    if case var .requestParameters(parameters, encoding) = target.task {
                         parameters[SGTarget.ParamaterKey.accessToken] = token
+                        return endpoint.replacing(task: .requestParameters(parameters: parameters, encoding: encoding))
                     }
-                    
-                    return endpoint.adding(newHTTPHeaderFields: ["Token-Auth": token])
                 }
+
                 return endpoint
             }) as SGProvider
         }
 
         container.register(.singleton) {
             try AuthManager(provider: container.resolve()) as AuthManagerProtocol
+        }
+
+        container.register(.singleton) {
+            try MediaService(provider: container.resolve()) as MediaServiceProtocol
         }
 
         return container
@@ -66,7 +70,10 @@ enum Containers {
         }
 
         container.register {
-            MainGalleryViewModel() as MainGalleryViewModelProtocol
+            try MainGalleryViewModel(
+                authManager: managersContainer.resolve(),
+                mediaService: managersContainer.resolve()
+            ) as MainGalleryViewModelProtocol
         }
 
         return container
