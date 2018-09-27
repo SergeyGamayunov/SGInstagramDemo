@@ -72,7 +72,7 @@ extension AuthManager: AuthManagerProtocol {
                     self.save(token: token)
                     self.isAuthorizedSubject.onNext(true)
                 }
-            case .failure(let error):
+            case .failure:
                 self.isAuthorizedSubject.onNext(false)
             }
         }

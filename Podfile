@@ -8,5 +8,8 @@ target 'SGInstagramDemo' do
   pod 'RxSwift'
   pod 'Dip'
   pod 'KeychainAccess'
+  pod 'IGListKit'
+  pod 'Kingfisher'
+  pod 'MBProgressHUD'
 
 end

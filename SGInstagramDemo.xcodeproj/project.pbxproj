@@ -10,6 +10,11 @@
 		8EADFA66B797711945700DED /* Pods_SGInstagramDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A5437D067EDF421F0EF608 /* Pods_SGInstagramDemo.framework */; };
 		A535F0CB21596E3F003CD238 /* MainGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535F0CA21596E3F003CD238 /* MainGalleryViewController.swift */; };
 		A535F0CD21596E4D003CD238 /* MainGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535F0CC21596E4D003CD238 /* MainGalleryViewModel.swift */; };
+		A55577ED215CF8AF0040A802 /* SGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55577EC215CF8AF0040A802 /* SGColor.swift */; };
+		A55577EF215CFC1A0040A802 /* MyRecentSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55577EE215CFC1A0040A802 /* MyRecentSectionController.swift */; };
+		A55577F1215CFDFF0040A802 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55577F0215CFDFF0040A802 /* PostCell.swift */; };
+		A55577F5215D047A0040A802 /* SGFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55577F4215D047A0040A802 /* SGFont.swift */; };
+		A55577F6215D07970040A802 /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A55577F2215D04530040A802 /* SpaceMono-Regular.ttf */; };
 		A5825F2E2159F72D006CEDE3 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F2D2159F72D006CEDE3 /* Configuration.swift */; };
 		A5825F312159FB04006CEDE3 /* SGTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F302159FB04006CEDE3 /* SGTarget.swift */; };
 		A5825F33215A2212006CEDE3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5825F32215A2212006CEDE3 /* UIView+Layout.swift */; };
@@ -37,6 +42,11 @@
 		86A5437D067EDF421F0EF608 /* Pods_SGInstagramDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SGInstagramDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A535F0CA21596E3F003CD238 /* MainGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGalleryViewController.swift; sourceTree = "<group>"; };
 		A535F0CC21596E4D003CD238 /* MainGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGalleryViewModel.swift; sourceTree = "<group>"; };
+		A55577EC215CF8AF0040A802 /* SGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGColor.swift; sourceTree = "<group>"; };
+		A55577EE215CFC1A0040A802 /* MyRecentSectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecentSectionController.swift; sourceTree = "<group>"; };
+		A55577F0215CFDFF0040A802 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		A55577F2215D04530040A802 /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
+		A55577F4215D047A0040A802 /* SGFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGFont.swift; sourceTree = "<group>"; };
 		A5825F2D2159F72D006CEDE3 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A5825F302159FB04006CEDE3 /* SGTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SGTarget.swift; sourceTree = "<group>"; };
 		A5825F32215A2212006CEDE3 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -83,8 +93,10 @@
 		A535F0C921596887003CD238 /* MainGallery */ = {
 			isa = PBXGroup;
 			children = (
-				A535F0CA21596E3F003CD238 /* MainGalleryViewController.swift */,
 				A535F0CC21596E4D003CD238 /* MainGalleryViewModel.swift */,
+				A535F0CA21596E3F003CD238 /* MainGalleryViewController.swift */,
+				A55577EE215CFC1A0040A802 /* MyRecentSectionController.swift */,
+				A55577F0215CFDFF0040A802 /* PostCell.swift */,
 			);
 			path = MainGallery;
 			sourceTree = "<group>";
@@ -121,7 +133,11 @@
 		A5C4E941215BF81A00376542 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A55577F2215D04530040A802 /* SpaceMono-Regular.ttf */,
 				A5C4E94B215BFA6100376542 /* Localizable.strings */,
+				A5F021A92158F35800B565B1 /* Assets.xcassets */,
+				A5F021AB2158F35800B565B1 /* LaunchScreen.storyboard */,
+				A5F021AE2158F35800B565B1 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -131,16 +147,18 @@
 			children = (
 				A5825F2D2159F72D006CEDE3 /* Configuration.swift */,
 				A5C4E947215BFA0600376542 /* Strings.swift */,
+				A55577EC215CF8AF0040A802 /* SGColor.swift */,
+				A55577F4215D047A0040A802 /* SGFont.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		A5D7385921595874009080F4 /* Business */ = {
+		A5D7385921595874009080F4 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
 				A5D7385A2159588C009080F4 /* Containers.swift */,
 			);
-			path = Business;
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		A5D7386021595E1E009080F4 /* Router */ = {
@@ -155,8 +173,8 @@
 		A5D7386321596464009080F4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A535F0C921596887003CD238 /* MainGallery */,
 				A5D738642159646A009080F4 /* Auth */,
+				A535F0C921596887003CD238 /* MainGallery */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -164,8 +182,8 @@
 		A5D738642159646A009080F4 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				A5D738652159647A009080F4 /* AuthViewController.swift */,
 				A5D73867215964B7009080F4 /* AuthViewModel.swift */,
+				A5D738652159647A009080F4 /* AuthViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -191,18 +209,15 @@
 		A5F021A12158F35600B565B1 /* SGInstagramDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A5F021A22158F35600B565B1 /* AppDelegate.swift */,
+				A5D7386321596464009080F4 /* Modules */,
+				A5D7385921595874009080F4 /* Factory */,
+				A5D7386021595E1E009080F4 /* Router */,
 				A5C4E946215BF9DE00376542 /* Constants */,
-				A5C4E941215BF81A00376542 /* Resources */,
 				A5C4E939215BEEE900376542 /* Models */,
 				A5825F2F2159FAF3006CEDE3 /* Networking */,
-				A5D7386321596464009080F4 /* Modules */,
-				A5D7386021595E1E009080F4 /* Router */,
-				A5D7385921595874009080F4 /* Business */,
 				A5825F34215A2C71006CEDE3 /* Extensions */,
-				A5F021A22158F35600B565B1 /* AppDelegate.swift */,
-				A5F021A92158F35800B565B1 /* Assets.xcassets */,
-				A5F021AB2158F35800B565B1 /* LaunchScreen.storyboard */,
-				A5F021AE2158F35800B565B1 /* Info.plist */,
+				A5C4E941215BF81A00376542 /* Resources */,
 			);
 			path = SGInstagramDemo;
 			sourceTree = "<group>";
@@ -228,7 +243,7 @@
 				A5F0219C2158F35500B565B1 /* Frameworks */,
 				A5F0219D2158F35500B565B1 /* Resources */,
 				FCC3F7B8C974136A02E9E453 /* [CP] Embed Pods Frameworks */,
-				A5C4E940215BF7FD00376542 /* ShellScript */,
+				A5C4E940215BF7FD00376542 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -277,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5F021AD2158F35800B565B1 /* LaunchScreen.storyboard in Resources */,
+				A55577F6215D07970040A802 /* SpaceMono-Regular.ttf in Resources */,
 				A5C4E949215BFA6100376542 /* Localizable.strings in Resources */,
 				A5F021AA2158F35800B565B1 /* Assets.xcassets in Resources */,
 			);
@@ -285,17 +301,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A5C4E940215BF7FD00376542 /* ShellScript */ = {
+		A5C4E940215BF7FD00376542 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
-			outputFileListPaths = (
-			);
+			name = SwiftGen;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +342,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SGInstagramDemo/Pods-SGInstagramDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -338,7 +354,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -355,12 +374,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55577F5215D047A0040A802 /* SGFont.swift in Sources */,
 				A5D7385F21595AF3009080F4 /* Router.swift in Sources */,
 				A5D7385D21595959009080F4 /* AuthManager.swift in Sources */,
 				A5C4E938215BEA8D00376542 /* MediaService.swift in Sources */,
 				A5F021A32158F35600B565B1 /* AppDelegate.swift in Sources */,
 				A5D73868215964B7009080F4 /* AuthViewModel.swift in Sources */,
 				A535F0CD21596E4D003CD238 /* MainGalleryViewModel.swift in Sources */,
+				A55577EF215CFC1A0040A802 /* MyRecentSectionController.swift in Sources */,
 				A5D7385B2159588C009080F4 /* Containers.swift in Sources */,
 				A5825F312159FB04006CEDE3 /* SGTarget.swift in Sources */,
 				A5825F2E2159F72D006CEDE3 /* Configuration.swift in Sources */,
@@ -368,9 +389,11 @@
 				A5C4E948215BFA0600376542 /* Strings.swift in Sources */,
 				A5C4E93B215BEEF500376542 /* UserData.swift in Sources */,
 				A5C4E93D215BF40C00376542 /* SimplePost.swift in Sources */,
+				A55577F1215CFDFF0040A802 /* PostCell.swift in Sources */,
 				A5D738662159647A009080F4 /* AuthViewController.swift in Sources */,
 				A535F0CB21596E3F003CD238 /* MainGalleryViewController.swift in Sources */,
 				A5C4E93F215BF61300376542 /* UIViewController+ErrorPresentable.swift in Sources */,
+				A55577ED215CF8AF0040A802 /* SGColor.swift in Sources */,
 				A5825F36215A2C86006CEDE3 /* URL+Parameters.swift in Sources */,
 				A5D7386221595E33009080F4 /* RouterDestination.swift in Sources */,
 			);
@@ -523,8 +546,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3W3883E2B;
-				INFOPLIST_FILE = SGInstagramDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(SRCROOT)/SGInstagramDemo/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,8 +566,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3W3883E2B;
-				INFOPLIST_FILE = SGInstagramDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = "$(SRCROOT)/SGInstagramDemo/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

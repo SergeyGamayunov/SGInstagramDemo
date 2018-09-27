@@ -8,9 +8,11 @@
 
 import UIKit
 import WebKit
+import MBProgressHUD
 
 class AuthViewController: UIViewController {
     let viewModel: AuthViewModelProtocol
+    var indicator: MBProgressHUD!
 
     private lazy var webView: WKWebView = {
         let view = WKWebView(frame: .zero)
@@ -24,11 +26,32 @@ class AuthViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .green
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureIndicator()
+        openAuthPage()
+    }
 
-        webView.addAndFitEdges(to: view, andBindWith: view.safeAreaInsets)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        configureWebView()
+    }
+
+    func configureIndicator() {
+        indicator = MBProgressHUD.showAdded(to: webView, animated: true)
+        indicator.label.text = L10n.loading
+        indicator.label.font = SGFont.brand(size: 12)
+    }
+
+    func configureWebView() {
+        if #available(iOS 11.0, *) {
+            webView.addAndFitEdges(to: view, andBindWith: view.safeAreaInsets)
+        } else {
+            webView.addAndFitEdges(to: view)
+        }
+    }
+
+    func openAuthPage() {
         if let request = viewModel.firstStepRequest {
             webView.load(request)
         }
@@ -46,5 +69,21 @@ extension AuthViewController: WKNavigationDelegate {
         if let code = url.queryParameters[SGTarget.ParamaterKey.code] {
             viewModel.requestToken(with: code)
         }
+    }
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        MBProgressHUD.hide(for: webView, animated: true)
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        MBProgressHUD.hide(for: webView, animated: true)
+    }
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        MBProgressHUD.hide(for: webView, animated: true)
     }
 }

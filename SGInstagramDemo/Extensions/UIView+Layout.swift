@@ -21,13 +21,15 @@ extension UIView {
         ])
     }
 
-    func center(in superview: UIView, xInset: CGFloat = 0, yInset: CGFloat = 0) {
+    func center(in superview: UIView, width: CGFloat, height: CGFloat) {
         translatesAutoresizingMaskIntoConstraints = false
         superview.addSubview(self)
 
         NSLayoutConstraint.activate([
-            centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: xInset),
-            centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: yInset),
+            centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            centerYAnchor.constraint(equalTo: superview.centerYAnchor),
+            widthAnchor.constraint(equalToConstant: width),
+            heightAnchor.constraint(equalToConstant: height)
         ])
     }
 }

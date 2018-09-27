@@ -9,6 +9,10 @@ import Foundation
 internal enum L10n {
   /// Error occured!
   internal static let errorOccured = L10n.tr("Localizable", "error_occured")
+  /// Loading...
+  internal static let loading = L10n.tr("Localizable", "loading")
+  /// Log out
+  internal static let logOut = L10n.tr("Localizable", "log_out")
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
 }

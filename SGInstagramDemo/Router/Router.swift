@@ -64,10 +64,10 @@ extension FirstLaunchManager: FirstLaunchManagerProtocol {
             animations: {
                 snapshot.layer.opacity = 0
                 snapshot.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
-        },
+            },
             completion: { _ in
                 snapshot.removeFromSuperview()
-        }
+            }
         )
     }
 }

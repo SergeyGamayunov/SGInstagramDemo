@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import IGListKit
 
-struct SimplePost {
+class SimplePost: NSObject {
     let url: URL
     let likes: Int
+
+    init(url: URL, likes: Int) {
+        self.url = url
+        self.likes = likes
+    }
 }
 
 extension SimplePost {
@@ -24,5 +30,15 @@ extension SimplePost {
         }
 
         return result
+    }
+}
+
+extension NSObject: ListDiffable {
+    public func diffIdentifier() -> NSObjectProtocol {
+        return self
+    }
+
+    public func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        return isEqual(object)
     }
 }
